@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <!--event name="sales_quote_item_set_product">
+        <observer name="br_customimageoption_save_image" instance="Jarvis\CustomOptionImage\Observer\SaveCustomOptionImage"/>
+    </event-->
+</config>

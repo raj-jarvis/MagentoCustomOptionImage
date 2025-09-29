@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <virtualType name="Jarvis\CustomOptionImage\ImageUpload" type="Jarvis\CustomOptionImage\Model\ImageUploader">
+        <arguments>
+            <argument name="baseTmpPath" xsi:type="string">custom_option/tmp</argument>
+            <argument name="basePath" xsi:type="string">custom_option</argument>
+            <argument name="allowedExtensions" xsi:type="array">
+                <item name="jpg" xsi:type="string">jpg</item>
+                <item name="jpeg" xsi:type="string">jpeg</item>
+                <item name="png" xsi:type="string">png</item>
+            </argument>
+        </arguments>
+    </virtualType>
+    <type name="Jarvis\CustomOptionImage\Controller\Adminhtml\Upload\Image">
+        <arguments>
+            <argument name="imageUploader" xsi:type="object">Jarvis\CustomOptionImage\ImageUpload</argument>
+        </arguments>
+    </type>
+    <type name="Magento\Catalog\Model\ResourceModel\Product\Option">
+        <plugin name="jarvis_custom_option_image_save" type="Jarvis\CustomOptionImage\Plugin\ProductOptionSave"/>
+    </type>
+</config>

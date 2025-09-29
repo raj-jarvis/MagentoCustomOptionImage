@@ -1,0 +1,13 @@
+<?php
+/** @var \Magento\Catalog\Block\Adminhtml\Product\Edit\Tab\Options $block */
+// phpcs:ignoreFile
+
+$option = $block->getOption();
+?>
+<div class="field">
+    <label class="label"><?= __('Image Upload') ?></label>
+    <div class="control">
+        <input type="file" name="option_image[<?= $option->getId() ?>]" id="option_image_<?= $option->getId() ?>" class="input-file" />
+    </div>
+</div>
+<?= $block->getChildHtml('option_type'); ?>

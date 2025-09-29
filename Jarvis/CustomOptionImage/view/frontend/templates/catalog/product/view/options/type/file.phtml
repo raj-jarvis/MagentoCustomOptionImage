@@ -1,0 +1,12 @@
+<?php
+/** @var \Magento\Catalog\Block\Product\View\Options $block */
+// phpcs:ignoreFile
+
+$option = $block->getOption();
+?>
+<div class="field">
+    <label class="label" for="options_<?= $option->getId() ?>_file"><?= $option->getTitle() ?></label>
+    <div class="control">
+        <input type="file" name="options[<?= $option->getId() ?>][file]" id="options_<?= $option->getId() ?>_file" class="input-file" accept="image/*" />
+    </div>
+</div>

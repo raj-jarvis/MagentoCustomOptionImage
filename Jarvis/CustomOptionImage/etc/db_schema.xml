@@ -1,0 +1,14 @@
+<?xml version="1.0" ?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="br_customimageoption_image" resource="default" engine="innodb" comment="Custom Image Option Images">
+        <column name="image_id" xsi:type="int" unsigned="true" nullable="false" identity="true" comment="Image ID"/>
+        <column name="option_id" xsi:type="int" unsigned="true" nullable="false" comment="Option ID"/>
+        <column name="image_path" xsi:type="varchar" nullable="true" length="255" comment="Image Path"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="image_id"/>
+        </constraint>
+    </table>
+    <table name="catalog_product_option_type_value">
+        <column name="custom_optimage" xsi:type="text" nullable="true" comment="Custom Option Image"/>
+    </table>
+</schema>
